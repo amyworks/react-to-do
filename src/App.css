@@ -1,28 +1,516 @@
-.App {
-  text-align: center;
+/* 
+  Flannel Reset
+    AUTHOR    Amy Coleman
+    COMPANY   Flannel Studios
+    URL     http://flannelstudios.com/  
+    GIT REPO  https://github.com/amyworks/
+    LICENSE   GNU General Public License 3.0
+*/
+
+  /*
+    FONT NAME QUICK REFERENCE
+    https://fonts.googleapis.com/css?family=Amatic+SC|Montserrat
+
+      --NORMAL      font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+      --HEADING     font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+      --TODO        font-family: 'Permanent Marker', cursive;
+  */
+
+html, body, embed, iframe, object, code, header, footer, nav, section, article, aside, details, summary, hgroup, 
+a, img, canvas, figure, audio, video, mark, time, div, p, span, menu, ul, ol, li, dd, dt, dl,
+h1, h2, h3, h4, h5, h6, pre, big, small, strong, sub, sup, em, del, ins, var, b, u, i,
+blockquote, cite, caption, figcaption, q, dfn, abbr, acronym, address, form, label, fieldset, kbd, output,
+table, legend, tbody, thead, tfoot, tr, th, td, ruby {
+  /* Margin, padding, border */
+  margin: 0; padding: 0; border: 0;
+  /* Font */
+  font-family:'Montserrat', sans-serif; 
+  font-size: 1em;
+  /* Alignment */
+  vertical-align: baseline;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+/* HTML5 display-role reset for older browsers */
+header, hgroup, footer, nav, section, article, aside, menu, details, figcaption, figure {
+  display: block;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+/* Basic Formatting */
+body {
+  line-height: 1;
+  background:#f4faff;
+  color:#484848;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-.App-title {
-  font-size: 1.5em;
+/* Deprecated elements */ 
+center, tt, b, u, i, basefont, font, dir, applet, isindex, menu, s, strike, plaintext, listing, xmp {
+  margin:0; padding:0; border:0; vertical-align: baseline;
 }
 
-.App-intro {
-  font-size: large;
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  CLASS HELPERS
+
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.block{display:block;}
+.inline {display:inline;}
+.rounded-border {border-radius:10px;}
+.float-left{float:left;}
+.float-right{float:right;}
+.clearfix::after { /* clears a floated element -- see https://www.w3schools.com/howto/howto_css_clearfix.asp for details */
+  content: "";
+    clear: both;
+    display: table;
+}
+.element-center {margin:0 auto !important;}
+.text-center{text-align:center;}
+.text-right {text-align: right;}
+.padded {padding:30px;}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  TYPOGRAPHY STYLING
+
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* --------------------------------- 
+   Normal Text 
+   --------------------------------- */
+p {
+  font-size:1.15em;
+  line-height: 1.5em;
+}
+a, a:active, a:hover {
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* --------------------------------- 
+   Headings 
+   --------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  text-decoration: none;
+}
+h1 {
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  font-size:3em;
+  text-transform: uppercase;
+  margin:30px 0;
+}
+h2 {
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  font-size:1.5em;
+  padding:20px 0 10px 0;
+}
+h3 {
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  font-size:2em;
+  padding:20px 0 10px 0;
+  text-transform: uppercase;
+}
+h4 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style:italic;
+  font-size:1em;
+  padding:20px 0 10px 0;
+  color:#f45b41;
+}
+h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-size:.75em;
+  padding:0 0 0 0;
+}
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-size:.5em;
+  padding:0 0 0 0;
+}
+
+/* --------------------------------- 
+   Emphasizing 
+   --------------------------------- */
+strong, b {
+  font-weight:bold; /* change to value >100 or use {font-family: font-name-weight} */
+}
+em, i {
+  font-style:italic;  /* change to {font-family: font-name-style} */
+}
+.underline {
+  text-decoration:underline;
+}
+
+/* --------------------------------- 
+   Lists 
+   --------------------------------- */
+ol {
+  list-style-type: decimal;
+  margin:0 0 0 10px;
+}
+ul {
+  list-style-type: none;
+  margin:0 0 0 10px;
+}
+li {
+  line-height:1.5em;
+  padding:0 0 20px 0;
+}
+li:last-child {
+  padding:0 0 20px 0;
+}
+
+/* ---------------------------------
+   Quoting, citing, and highlighting 
+   --------------------------------- */
+sub, sup {
+  font-size:.5em;
+  padding-left:2px;
+}
+sub {  /* subscript styling */
+  vertical-align:sub;
+}
+sup { /* superscript styling */
+  vertical-align:super;
+}
+blockquote {
+  quotes:none;
+}
+blockquote:before, blockquote:after {
+  content: none;
+}
+q {
+  quotes:'"' '"' "'" "'";
+}
+q:before {
+  content:open-quote;
+}
+q:after {
+  content:close-quote;
+}
+.highlight {background:#ffee00;}
+
+img {
+  max-width:100%;
+  padding-bottom: 20px;
+}
+
+/* ---------------------------------
+   Forms 
+   --------------------------------- */
+
+form {
+
+}
+button {
+  color:#e1e9ef;
+  border:none;
+  background:transparent;
+  padding:0 0 0 10px;
+  vertical-align: middle;
+  font-size:1.25em;
+}
+button:hover {  
+  color:#f45942;
+}
+label {  
+  font-family: 'Permanent Marker', cursive;
+  font-size:1.5em;
+}
+input[type=text] {
+  font-size:1em;
+  padding:10px;
+  border-radius:30px;
+  border:1px solid #e1e9ef;
+}
+button[type=submit] {
+  font-size:2em;
+}
+button[type=submit]:hover {
+  color:#60c2e0;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  ELEMENT HELPERS
+
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+/*==============================================
+
+  Custom Classes
+
+  ==============================================*/
+
+input[type=checkbox] {
+  display:none;
+}
+input[type=checkbox] + label:before {
+  content:"\f058";
+  padding-right:10px;
+  font-family: "Font Awesome 5 Free";
+  font-size:1.25em !important;
+  color:#e1e9ef;
+  vertical-align: middle;
+}
+input[type=checkbox]:checked + label {
+  color:#e1e9ef;  
+  vertical-align: middle;
+}
+input[type=checkbox] + label:hover:before {
+  color:#3bdb53;
+}
+input[type=checkbox]:checked + label:before {
+  font-weight: 900;
+  color:#3bdb53;
+}
+
+/* 
+  Flannel Grid
+    AUTHOR    Amy Coleman
+    COMPANY   Flannel Studios
+    URL     http://flannelstudios.com/  
+    GIT REPO  https://github.com/amyworks/
+    LICENSE   GNU General Public License 3.0
+*/
+
+/* -----------------------
+  Normalize
+   ----------------------- */
+
+.fg-row {
+  max-width:1000px;
+  margin:0 auto;
+}
+.fg-row-padded {
+  max-width:1200px;
+  margin: 30px auto;
+}
+.fg-row-padded h2:nth-child(2) {
+  padding-top:100px;
+}
+.fg-col {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float:left;
+}
+.fg-col-padded {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float:left;
+  padding:20px;
+}
+.full-width {
+  width:100%;
+  margin:0 auto;
+}
+
+
+/* -----------------------
+  Half columns
+   ----------------------- */
+.half, .two-quarter, .three-sixth {
+  width:47%;  
+  margin-right:6%;
+}
+.half:last-child, .two-quarter:last-child, .three-sixth:last-child {
+  margin-right:0;
+}
+
+/* -----------------------
+  Third columns
+   ----------------------- */
+.third, .two-sixth {
+  width:29.33%; 
+  margin-right:6%;
+}
+.two-third, .four-sixth {
+  width:64.66%;
+  margin-right:6%;
+}
+.third:last-child, .two-sixth:last-child {
+  width:29.34%;
+  margin-right:0;
+}
+.two-third:last-child, .four-sixth:last-child {
+  width:64.67%;
+  margin-right:0;
+}
+
+/* -----------------------
+  Quarter columns
+   ----------------------- */
+.quarter {
+  width:20.5%;  
+  margin-right:6%;
+}
+.three-quarter {
+  width:73.5%;
+  margin-right:6%;
+}
+.quarter:last-child, .three-quarter:last-child {
+  margin-right:0;
+}
+
+/* -----------------------
+  Fifth columns
+   ----------------------- */
+.fifth {
+  width:16%;  
+  margin-right:5%;
+}
+.two-fifth {
+  width:37%;
+  margin-right:5%;
+}
+.three-fifth {
+  width:58%;
+  margin-right:5%;
+}
+.four-fifth {
+  width:79%;
+  margin-right:5%;
+}
+.fifth:last-child, .two-fifth:last-child, .three-fifth:last-child, .four-fifth:last-child {
+  margin-right:0;
+}
+
+/* -----------------------
+  Sixth columns
+   ----------------------- */
+.sixth {
+  width:11.66%; 
+  margin-right:6%;
+}
+.five-sixth {
+  width:82.33%;
+  margin-right:6%;
+}
+.sixth:last-child {
+  width:11.67%;
+  margin-right:0;
+}
+.five-sixth:last-child {
+  width:82.34%;
+  margin-right:0;
+}
+
+
+
+/*==============================================
+
+  RESPONSIVE TWEAKS
+
+  ==============================================*/
+
+/* -----------------------
+  Tablets - Landscape
+   ----------------------- */
+@media screen and (max-width: 1199px) {
+  .fg-row {
+    margin:0 50px;
+  }
+  .third, .two-sixth, .two-third, .four-sixth, .sixth, .five-sixth {
+    width:29.33%; 
+    margin-right:6%;
+  }
+  .third:last-child, .two-sixth:last-child, .two-third:last-child, .four-sixth:last-child, .sixth:last-child, .five-sixth:last-child {
+    margin-right:0;
+  }
+  .quarter, .three-quarter, .fifth, .two-fifth, .three-fifth, .four-fifth {
+    width:47%;
+    margin-right:6%;
+  } 
+  .quarter:last-child, .three-quarter:last-child, .fifth:last, .two-fifth:last-child, .three-fifth:last-child, .four-fifth:last-child {
+    margin-right:0;
+  }
+
+}
+
+/* -----------------------
+  Tablets - Portrait
+   ----------------------- */
+@media screen and (max-width: 960px) {
+  .fg-row {
+    margin:0 30px;
+  }
+  .third:last-child, .two-sixth:last-child, .two-third:last-child, .four-sixth:last-child, .quarter:last-child, .three-quarter:last-child, 
+  .fifth:last-child, .two-fifth:last-child, .three-fifth:last-child, .four-fifth:last-child, .sixth:last-child, .five-sixth:last-child {
+    margin-right:0;
+  }
+  /* CUSTOM ELEMENTS */
+  h3 {
+    font-size: 1.5em;
+  }
+}
+
+/* -----------------------
+  Smartphones - Landscape
+   ----------------------- */
+@media screen and (max-width: 780px) {
+  .fg-row {
+    margin:0 30px;
+  }
+  .half, .two-quarter, .three-sixth, .third, .two-sixth, .two-third, .four-sixth, .quarter, 
+  .three-quarter, .fifth, .two-fifth, .three-fifth, .four-fifth, .sixth, .five-sixth,
+  .half:last-child, .two-quarter:last-child, .three-sixth:last-child, .third:last-child, 
+  .two-sixth:last-child, .two-third:last-child, .four-sixth:last-child, .quarter:last-child, 
+  .three-quarter:last-child, .fifth:last-child, .two-fifth:last-child, .three-fifth:last-child, 
+  .four-fifth:last-child, .sixth:last-child, .five-sixth:last-child  {
+    width:100%;
+  }
+  .third:last-child, .two-sixth:last-child, .two-third:last-child, .four-sixth:last-child, .quarter:last-child, .three-quarter:last-child, 
+  .fifth:last-child, .two-fifth:last-child, .three-fifth:last-child, .four-fifth:last-child, .sixth:last-child, .five-sixth:last-child {
+    margin-right:0;
+  }
+  /* CUSTOM ELEMENTS */
+  h3 {
+    font-size: 1.5em;
+  }
+  .recipe-ingredients {
+    margin-bottom:40px;
+  }
+}
+
+/* -----------------------
+  Smartphones
+   ----------------------- */
+@media screen and (max-width: 660px) {
+  .fg-row {
+    margin:0 17px;
+  }
+  .fg-col {
+    float:none;
+    padding:30px;
+  }
+  .half, .two-quarter, .three-sixth, .third, .two-sixth, .two-third, .four-sixth, .quarter, 
+  .three-quarter, .fifth, .two-fifth, .three-fifth, .four-fifth, .sixth, .five-sixth,
+  .half:last-child, .two-quarter:last-child, .three-sixth:last-child, .third:last-child, 
+  .two-sixth:last-child, .two-third:last-child, .four-sixth:last-child, .quarter:last-child, 
+  .three-quarter:last-child, .fifth:last-child, .two-fifth:last-child, .three-fifth:last-child, 
+  .four-fifth:last-child, .sixth:last-child, .five-sixth:last-child  {
+    width:100%;
+  }
+
+  /* CUSTOM ELEMENTS */
+  body {
+    background-size:100%;
+    width:100%;
+  }
+  header.main h1 {
+    font-size:1.5em;
+  }
+  header.main p {
+    font-size:.75em;
+  }
+  .recipe-subtitle {
+    font-size:.75em;
+  }
+
 }
