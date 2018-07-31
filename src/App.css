@@ -38,7 +38,7 @@ header, hgroup, footer, nav, section, article, aside, menu, details, figcaption,
 /* Basic Formatting */
 body {
   line-height: 1;
-  background:#f4faff;
+  background:#fefefe;
   color:#484848;
 }
 table {
@@ -209,15 +209,14 @@ button {
   color:#e1e9ef;
   border:none;
   background:transparent;
-  padding:0 0 0 10px;
+  padding:0 0 5px 10px;
   vertical-align: middle;
-  font-size:1.25em;
+  font-size:1em;
 }
 button:hover {  
   color:#f45942;
 }
 label {  
-  font-family: 'Permanent Marker', cursive;
   font-size:1.5em;
 }
 input[type=text] {
@@ -251,9 +250,9 @@ input[type=checkbox] {
 }
 input[type=checkbox] + label:before {
   content:"\f058";
-  padding-right:10px;
+  padding-right:15px;
   font-family: "Font Awesome 5 Free";
-  font-size:1.25em !important;
+  font-size:1em !important;
   color:#e1e9ef;
   vertical-align: middle;
 }
